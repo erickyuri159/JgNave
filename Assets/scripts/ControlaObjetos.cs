@@ -6,6 +6,7 @@ using UnityEngine;
 public class ControlaObjetos : MonoBehaviour
 {   public float meuTempo;
     public List<GameObject> MeuObjeto;
+   
     void Start()
     {
        

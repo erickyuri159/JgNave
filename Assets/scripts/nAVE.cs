@@ -5,7 +5,7 @@ using UnityEngine;
 public class nAVE : MonoBehaviour
 {
     private float meuTempo;
-    GameObject Missil;
+   public GameObject Missil;
     public void mover(string lado)
     {
         if (lado == "Direito") 
@@ -44,15 +44,21 @@ public class nAVE : MonoBehaviour
     }
     public void Disparar()
     {
-
-    
-    meuTempo += Time.deltaTime;
+        meuTempo += Time.deltaTime;
         if (meuTempo > 0.7f)
         {
+            //tiro1
           Vector3 Arma1 = new Vector3(transform.position.x -0.5f, transform.position.y, transform.position.z);
-            GameObject Arma = Instantiate(Missil, Arma1, Quaternion.identity);
-            Destroy(Arma, 3f );
+            GameObject ArmaLancada1 = Instantiate(Missil, Arma1, Quaternion.identity);
+            Destroy(ArmaLancada1, 3f );
+           
+        
+        //tiro2
+            Vector3 Arma2 = new Vector3(transform.position.x + 0.5f, transform.position.y, transform.position.z);
+            GameObject ArmaLancada2 = Instantiate(Missil, Arma2, Quaternion.identity);
+            Destroy(ArmaLancada2, 3f);
+
             meuTempo = 0;
         }
-        }
+    }
 }
