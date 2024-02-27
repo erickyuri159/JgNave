@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class nAVE : MonoBehaviour
 {
+    private float meuTempo;
+    GameObject Missil;
     public void mover(string lado)
     {
         if (lado == "Direito") 
@@ -23,6 +25,7 @@ public class nAVE : MonoBehaviour
     private void Update()
     {
         SeguirDedo();
+        Disparar();
     }
     public void SeguirDedo()
     {
@@ -39,4 +42,17 @@ public class nAVE : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, PosTelaCorrigida, 0.01f);
         }
     }
+    public void Disparar()
+    {
+
+    
+    meuTempo += Time.deltaTime;
+        if (meuTempo > 0.7f)
+        {
+          Vector3 Arma1 = new Vector3(transform.position.x -0.5f, transform.position.y, transform.position.z);
+            GameObject Arma = Instantiate(Missil, Arma1, Quaternion.identity);
+            Destroy(Arma, 3f );
+            meuTempo = 0;
+        }
+        }
 }
