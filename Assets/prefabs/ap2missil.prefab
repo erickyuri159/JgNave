@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af29914357a75f94dae1e4c9832a8d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dano: 2
+  Dano: 15
 --- !u!82 &7832031370610024369
 AudioSource:
   m_ObjectHideFlags: 0
