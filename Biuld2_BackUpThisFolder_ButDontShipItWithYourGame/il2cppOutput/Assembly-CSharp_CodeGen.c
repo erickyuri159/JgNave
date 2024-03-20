@@ -1,0 +1,133 @@
+﻿#include "pch-c.h"
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
+
+#include "codegen/il2cpp-codegen-metadata.h"
+
+
+
+
+
+// 0x00000001 System.Void Asteroid::TomouDano(System.Int32)
+extern void Asteroid_TomouDano_mA99CD3D7ACB7618BF0E99496AC49156E71E05DD3 (void);
+// 0x00000002 System.Void Asteroid::.ctor()
+extern void Asteroid__ctor_m5DD154C19DC480E6C3E17320AE52EBB2C9517ACC (void);
+// 0x00000003 System.Void BotaoD::Start()
+extern void BotaoD_Start_mAF0E68F537E24620F6667444519DDDCB09149167 (void);
+// 0x00000004 System.Void BotaoD::Update()
+extern void BotaoD_Update_mFF5E0D28934F756711C498183826EFAEEF31D84A (void);
+// 0x00000005 System.Void BotaoD::Pressionar()
+extern void BotaoD_Pressionar_m8B2CBEB81F496988897FF897189BFFCA68F1999E (void);
+// 0x00000006 System.Void BotaoD::.ctor()
+extern void BotaoD__ctor_m0E820A8088C220E5AB10FCBB55AC618C0C101FDE (void);
+// 0x00000007 System.Void BotaoE::Start()
+extern void BotaoE_Start_m154FF846332B36148BACDF7B0B2E80F152A618B7 (void);
+// 0x00000008 System.Void BotaoE::Update()
+extern void BotaoE_Update_mFCEA103A6485BB308D9EF85E055FC8F84C0F1182 (void);
+// 0x00000009 System.Void BotaoE::Pressionar()
+extern void BotaoE_Pressionar_mB9AAE27496F83CB81BE54E04878E6364AD1A1132 (void);
+// 0x0000000A System.Void BotaoE::.ctor()
+extern void BotaoE__ctor_m01F594003024093BA5EB9AAA11A64EC758ACC518 (void);
+// 0x0000000B System.Void ControlaObjetos::Start()
+extern void ControlaObjetos_Start_mDDEF6230A179DFF9E5CC84A2714E2D0A17F52983 (void);
+// 0x0000000C System.Void ControlaObjetos::Update()
+extern void ControlaObjetos_Update_mCC5421282A65CD4B49EA78C9888E4BEF449C85E8 (void);
+// 0x0000000D System.Void ControlaObjetos::.ctor()
+extern void ControlaObjetos__ctor_mD2B28F37B0DFDD46FA087762DED6C8F0FDD3419B (void);
+// 0x0000000E System.Void Missil::OnTriggerEnter2D(UnityEngine.Collider2D)
+extern void Missil_OnTriggerEnter2D_m427A9459537048B2761D167C5D931E9F78DCBC88 (void);
+// 0x0000000F System.Void Missil::.ctor()
+extern void Missil__ctor_m631B7793615FB504EBF033C8987B11D19B3EDAD9 (void);
+// 0x00000010 System.Void MoveFundo::Start()
+extern void MoveFundo_Start_m73CD05DD60CA3C778377782F8081FE3B572E4929 (void);
+// 0x00000011 System.Void MoveFundo::Update()
+extern void MoveFundo_Update_m8B9AC073152C1442A8DE6F02D7F7B15ECCAFC61C (void);
+// 0x00000012 System.Void MoveFundo::.ctor()
+extern void MoveFundo__ctor_m2DE9A7D1BA1C0610512326011664E63729646F87 (void);
+// 0x00000013 System.Void nAVE::mover(System.String)
+extern void nAVE_mover_m54095A30D30ABCB25C85CDA0096D7B8225E74C26 (void);
+// 0x00000014 System.Void nAVE::Update()
+extern void nAVE_Update_mB1CBB8CD026EAAB0D6FAEC2C58568FCD6495A239 (void);
+// 0x00000015 System.Void nAVE::SeguirDedo()
+extern void nAVE_SeguirDedo_m73CB37FD2C79893B6E7A4B20860D3C61CE5E0CCF (void);
+// 0x00000016 System.Void nAVE::Disparar()
+extern void nAVE_Disparar_mD00EFBDC783B882F9342CF61C5C3602228A0AA99 (void);
+// 0x00000017 System.Void nAVE::.ctor()
+extern void nAVE__ctor_m68762D612E4F20B1E894EC1BADA1E797594D5368 (void);
+static Il2CppMethodPointer s_methodPointers[23] = 
+{
+	Asteroid_TomouDano_mA99CD3D7ACB7618BF0E99496AC49156E71E05DD3,
+	Asteroid__ctor_m5DD154C19DC480E6C3E17320AE52EBB2C9517ACC,
+	BotaoD_Start_mAF0E68F537E24620F6667444519DDDCB09149167,
+	BotaoD_Update_mFF5E0D28934F756711C498183826EFAEEF31D84A,
+	BotaoD_Pressionar_m8B2CBEB81F496988897FF897189BFFCA68F1999E,
+	BotaoD__ctor_m0E820A8088C220E5AB10FCBB55AC618C0C101FDE,
+	BotaoE_Start_m154FF846332B36148BACDF7B0B2E80F152A618B7,
+	BotaoE_Update_mFCEA103A6485BB308D9EF85E055FC8F84C0F1182,
+	BotaoE_Pressionar_mB9AAE27496F83CB81BE54E04878E6364AD1A1132,
+	BotaoE__ctor_m01F594003024093BA5EB9AAA11A64EC758ACC518,
+	ControlaObjetos_Start_mDDEF6230A179DFF9E5CC84A2714E2D0A17F52983,
+	ControlaObjetos_Update_mCC5421282A65CD4B49EA78C9888E4BEF449C85E8,
+	ControlaObjetos__ctor_mD2B28F37B0DFDD46FA087762DED6C8F0FDD3419B,
+	Missil_OnTriggerEnter2D_m427A9459537048B2761D167C5D931E9F78DCBC88,
+	Missil__ctor_m631B7793615FB504EBF033C8987B11D19B3EDAD9,
+	MoveFundo_Start_m73CD05DD60CA3C778377782F8081FE3B572E4929,
+	MoveFundo_Update_m8B9AC073152C1442A8DE6F02D7F7B15ECCAFC61C,
+	MoveFundo__ctor_m2DE9A7D1BA1C0610512326011664E63729646F87,
+	nAVE_mover_m54095A30D30ABCB25C85CDA0096D7B8225E74C26,
+	nAVE_Update_mB1CBB8CD026EAAB0D6FAEC2C58568FCD6495A239,
+	nAVE_SeguirDedo_m73CB37FD2C79893B6E7A4B20860D3C61CE5E0CCF,
+	nAVE_Disparar_mD00EFBDC783B882F9342CF61C5C3602228A0AA99,
+	nAVE__ctor_m68762D612E4F20B1E894EC1BADA1E797594D5368,
+};
+static const int32_t s_InvokerIndices[23] = 
+{
+	2607,
+	3198,
+	3198,
+	3198,
+	3198,
+	3198,
+	3198,
+	3198,
+	3198,
+	3198,
+	3198,
+	3198,
+	3198,
+	2623,
+	3198,
+	3198,
+	3198,
+	3198,
+	2623,
+	3198,
+	3198,
+	3198,
+	3198,
+};
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
+const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
+{
+	"Assembly-CSharp.dll",
+	23,
+	s_methodPointers,
+	0,
+	NULL,
+	s_InvokerIndices,
+	0,
+	NULL,
+	0,
+	NULL,
+	0,
+	NULL,
+	NULL,
+	NULL, // module initializer,
+	NULL,
+	NULL,
+	NULL,
+};
