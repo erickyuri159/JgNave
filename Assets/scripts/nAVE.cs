@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class nAVE : MonoBehaviour
@@ -32,9 +33,12 @@ public class nAVE : MonoBehaviour
     }
     private void Update()
     {
-        EscolherNave();
-        SeguirDedo();
-        Disparar();
+        if (CJ.GameLigado == true)
+        {
+            EscolherNave();
+            SeguirDedo();
+            Disparar();
+        }
     }
     public void SeguirDedo()
     {
@@ -100,6 +104,10 @@ public class nAVE : MonoBehaviour
             Destroy(colidiu.gameObject);
             CJ.GanhaMoedas(5);
         }
-       
+     if (colidiu.gameObject.tag == "Asteroid")
+        {
+            Destroy(colidiu.gameObject);
+            CJ.tomarDano();
+        }
     }
 }
