@@ -23,7 +23,7 @@ public class BotaoD : Button
     {
         if (IsPressed() == true)
         {
-            Personagem.GetComponent<nAVE>().mover("Direito");
+            Personagem.GetComponent<nAVE>().Mover("Direito");
         }
         
 

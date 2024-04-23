@@ -20,6 +20,6 @@ public class VisorMoedas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MeuText.text = "Moedas: " + CJ.moedas.ToString();
+        MeuText.text = "moedas: " + CJ.moedas.ToString();
     }
 }

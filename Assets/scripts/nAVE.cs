@@ -6,108 +6,141 @@ using UnityEngine;
 public class nAVE : MonoBehaviour
 {
     private float meuTempo;
-    public List<Sprite> AeroNaves;
-   public GameObject Missil;
+    public GameObject Missil;
+
+    public List<Sprite> Aeronaves;
     private ControladorJogo CJ;
-    public void mover(string lado)
-       
-    {
-        if (lado == "Direito") 
-        {
-            transform.position = new Vector3(transform.position.x + 0.01f, transform.position.y, transform.position.z);
-        }
-
-
-        if (lado == "Esquerdo")
-        {
-            transform.position = new Vector3(transform.position.x - 0.01f, transform.position.y, transform.position.z);
-        }
-
-
-
-    }
     private void Start()
     {
-        GetComponent<SpriteRenderer>().sprite = AeroNaves[0];
-        CJ = GameObject.FindGameObjectWithTag("GameController").GetComponent<ControladorJogo>();
+        CJ = GameObject.FindGameObjectWithTag("GameController").
+                 GetComponent<ControladorJogo>();
+        GetComponent<SpriteRenderer>().sprite = Aeronaves[0];
     }
+
     private void Update()
     {
         if (CJ.GameLigado == true)
         {
-            EscolherNave();
             SeguirDedo();
             Disparar();
+            EscolherNave();
+        }
+
+    }
+
+
+    public void EscolherNave()
+    {
+        //JeitoAntigo
+        /*
+        float pontoQEUTenho = CJ.pontos;
+        if(pontoQEUTenho > 1000)
+        {
+            GetComponent<SpriteRenderer>().sprite = Aeronaves[3];
+        }else if(pontoQEUTenho > 500)
+        {
+            GetComponent<SpriteRenderer>().sprite = Aeronaves[2];
+        }
+        else if (pontoQEUTenho > 100)
+        {
+            GetComponent<SpriteRenderer>().sprite = Aeronaves[1];
+        }
+        else
+        {
+           GetComponent<SpriteRenderer>().sprite = Aeronaves[0];
+        }*/
+
+        //JeitoNovo
+
+        string naveAtual = PlayerPrefs.GetString("NaveEscolhida");
+        Debug.Log(naveAtual);
+        if (naveAtual == "Basica")
+        {
+            GetComponent<SpriteRenderer>().sprite = Aeronaves[0];
+        }
+        if (naveAtual == "Azul")
+        {
+            GetComponent<SpriteRenderer>().sprite = Aeronaves[1];
+        }
+        if (naveAtual == "Vermelha")
+        {
+            GetComponent<SpriteRenderer>().sprite = Aeronaves[2];
+        }
+
+        if (naveAtual == "Roxa")
+        {
+            GetComponent<SpriteRenderer>().sprite = Aeronaves[3];
         }
     }
+
+    public void Mover(string lado)
+    {
+        if (lado == "Direito")
+        {
+            transform.position = new Vector3(transform.position.x + 0.001f,
+            transform.position.y, transform.position.z);
+        }
+        if (lado == "Esquerdo")
+        {
+            transform.position = new Vector3(transform.position.x - 0.001f,
+            transform.position.y, transform.position.z);
+        }
+    }
+
+
     public void SeguirDedo()
     {
         if (Input.GetMouseButton(0))
         {
-            // pegar posição mause
+            //Pegar posicação do mouse naquele exato momento
             Vector3 destino = Input.mousePosition;
-            //transformar posição tela 
-            Vector3 PosTela = Camera.main.ScreenToWorldPoint(destino);
-            Vector3 PosTelaCorrigida = new Vector3(PosTela.x, PosTela.y+0.5f, 0 ); 
+            //Transformar posicao para tela
+            Vector3 posTela = Camera.main.ScreenToWorldPoint(destino);
+            //Destino Final Corrigido
+            Vector3 posTelaCorrigida = new Vector3(posTela.x, posTela.y + 0.5f,
+                0);
+            //Mover para posicao
+            transform.position = Vector3.MoveTowards(transform.position,
+                posTelaCorrigida, 0.01f);
 
-            // mover
-
-            transform.position = Vector3.MoveTowards(transform.position, PosTelaCorrigida, 0.1f);
         }
     }
+
     public void Disparar()
     {
         meuTempo += Time.deltaTime;
         if (meuTempo > 0.7f)
         {
-            //tiro1
-          Vector3 Arma1 = new Vector3(transform.position.x -0.5f, transform.position.y, transform.position.z);
+            ///Tiro1
+            Vector3 Arma1 = new Vector3(transform.position.x - 0.5f,
+                transform.position.y, transform.position.z);
             GameObject ArmaLancada1 = Instantiate(Missil, Arma1, Quaternion.identity);
-            Destroy(ArmaLancada1, 3f );
-           
-        
-        //tiro2
-            Vector3 Arma2 = new Vector3(transform.position.x + 0.5f, transform.position.y, transform.position.z);
+            Destroy(ArmaLancada1, 3f);
+            ///Tiro2
+            Vector3 Arma2 = new Vector3(transform.position.x + 0.5f,
+                transform.position.y, transform.position.z);
             GameObject ArmaLancada2 = Instantiate(Missil, Arma2, Quaternion.identity);
             Destroy(ArmaLancada2, 3f);
 
             meuTempo = 0;
         }
     }
-    public void EscolherNave()
-    {
-        float pontosQeuTenho = CJ.pontos;
-        if (pontosQeuTenho > 5000) 
-        {
-            GetComponent<SpriteRenderer>().sprite = AeroNaves[4];
-        }
-        else if (pontosQeuTenho > 3000)
-        {
-            GetComponent<SpriteRenderer>().sprite = AeroNaves[3];
-        }
-        else if (pontosQeuTenho > 1500)
-        {
-            GetComponent<SpriteRenderer>().sprite = AeroNaves[2];
-        }
-        else if (pontosQeuTenho > 1000)
-        {
-            GetComponent<SpriteRenderer>().sprite = AeroNaves[1];
-        }
-        else if (pontosQeuTenho > 500)
-        {
-            GetComponent<SpriteRenderer>().sprite = AeroNaves[0];
-        }
-    }
+
+
     private void OnTriggerEnter2D(Collider2D colidiu)
-    {if (colidiu.gameObject.tag == "moeda")
+    {
+        if (colidiu.gameObject.tag == "moeda")
         {
+
             Destroy(colidiu.gameObject);
             CJ.GanhaMoedas(5);
         }
-     if (colidiu.gameObject.tag == "Asteroid")
+
+        if (colidiu.gameObject.tag == "Asteroid")
         {
             Destroy(colidiu.gameObject);
             CJ.tomarDano();
         }
     }
+
 }

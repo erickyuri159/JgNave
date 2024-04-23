@@ -14,6 +14,8 @@ public class ControladorJogo : MonoBehaviour
 
     void Start()
     {
+        GameLigado = false;
+        Time.timeScale = 0;
         if (PlayerPrefs.HasKey("moeda"))
         {
             moedas = PlayerPrefs.GetFloat("moeda");
@@ -53,6 +55,11 @@ public class ControladorJogo : MonoBehaviour
     {
         GameLigado = false;
         Time.timeScale = 0;
+    }
+    public void IniciarJogo()
+    {
+        GameLigado = true;
+        Time.timeScale = 1;
     }
 
 }
