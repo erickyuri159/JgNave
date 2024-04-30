@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ControladorJogo : MonoBehaviour
 {
     public float pontos;
     public float moedas;
     public float Armadura = 3;
-    public bool GameLigado= true;
+    public bool GameLigado = true;
     public GameObject TelagameOver;
 
 
@@ -19,18 +20,18 @@ public class ControladorJogo : MonoBehaviour
         if (PlayerPrefs.HasKey("moeda"))
         {
             moedas = PlayerPrefs.GetFloat("moeda");
-        }else
+        } else
         {
-            PlayerPrefs.SetFloat("moeda",0);
+            PlayerPrefs.SetFloat("moeda", 0);
         }
-        
-       
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void GanhaPontos(float novoponto)
     {
@@ -60,6 +61,18 @@ public class ControladorJogo : MonoBehaviour
     {
         GameLigado = true;
         Time.timeScale = 1;
+    }
+    public void reiniciarJogo()
+    {
+        GameLigado = true;
+        Time.timeScale = 1;
+        Armadura = 1;
+        TelagameOver.SetActive(true);
+
+    }
+    public void AcabouJogo()
+    {
+        SceneManager.LoadScene(0);
     }
 
 }
