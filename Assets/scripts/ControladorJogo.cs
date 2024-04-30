@@ -67,7 +67,7 @@ public class ControladorJogo : MonoBehaviour
         GameLigado = true;
         Time.timeScale = 1;
         Armadura = 1;
-        TelagameOver.SetActive(true);
+        TelagameOver.SetActive(false);
 
     }
     public void AcabouJogo()
